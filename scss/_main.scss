@@ -1,0 +1,24 @@
+.mainIndex{
+    background-image: url(../Assets/Img/Fonoimagen4.jpg);
+    background-repeat: no-repeat;
+    background-size: 130vh;
+    background-position: center;
+}
+
+@media (max-width:768px){
+    .mainIndex{
+        background-size: 115vh;
+    }
+}
+
+@media (max-width: 600px){
+    .mainIndex{
+        background-size: 80vh;
+    }
+}
+
+@media (max-width: 420px){
+    .mainIndex{
+        background-size: 60vh;
+    }
+}

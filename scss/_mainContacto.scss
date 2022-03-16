@@ -1,0 +1,305 @@
+.mainContacto{
+    grid-area: main;
+    background-color: $colorFondoRosa;
+    display:flex;
+    flex-direction: column;
+
+    section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        margin: 12px 0px;
+
+        .iconosRS{
+            display: none;
+
+            a{
+                text-decoration: none;
+            }
+            
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            @extend .pBase;
+
+            div{
+                .cuadroNombreMail{
+                    display: flex;
+    
+                    .cuadroNombre{
+                        display: inline-block;
+                        @include pBaseConParametros (14px);
+                    
+                        width: 100%;
+                        height: 120%;
+                        border: 0;
+                        // border-radius: 5px;
+                        background-color: white;
+                        box-shadow: 5px 5px 10px $colorContraste;
+                    }
+        
+                    .cuadroMail{
+                        display: inline-block;
+                        @include pBaseConParametros (14px);
+                    
+                        width: 100%;
+                        height: 120%;
+                        border: 0;
+                        // border-radius: 5px;
+                        background-color: white;
+                        box-shadow: 5px 5px 10px $colorContraste;
+                    }
+                }
+            
+                div .cuadroMensaje{
+                    display: inline-block;
+                    @include pBaseConParametros (14px);
+                    
+                    padding-top: 5px;
+                    border: 0;
+                    // border-radius: 5px;
+                    background-color: white;
+                    width: 100%;
+                    height: 100px;
+                    box-shadow: 5px 5px 10px $colorContraste;
+                }
+            }   
+            
+            .areaAConsultar{
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+                width: 100%;
+                font-weight: bolder;
+                @include pBaseConParametros (14px);
+
+                .areas{
+                    display: inline-block;
+                    @include pBaseConParametros (13px);
+                    margin-top: 10px;
+                    font-weight: lighter;
+                }
+            }
+            
+                      
+            .horario{
+                display: inline-block;
+                font-weight: bolder;
+                @include pBaseConParametros (14px);
+
+                .horario__Opcion {
+                    display: inline-block;
+                    @include pBaseConParametros (13px);
+                    border: 0;
+                    border-radius: 10px;
+                }
+            }
+                       
+            .queresInfo{
+                display: flex;
+                font-weight: bolder;
+                @include pBaseConParametros (14px);
+            }
+            
+            #Enviar{
+                display: inline-block;
+                width: auto;
+                font-size: 14px;
+                color: $colorContraste;
+                background-color: white;
+                font-weight: bolder;
+                box-shadow: 0 0 15px 5px $colorContraste;
+            }
+            
+            #Reset{
+                display: inline-block;
+                width: auto;
+                font-size: 14px;
+                color: $colorContraste;
+                background-color: white;
+                font-weight: bolder;
+                box-shadow: 0 0 15px 5px $colorContraste;
+
+            }
+        }
+            
+        div li {
+            margin: 0px 5px;
+
+            $mapaRedes: (google: $colorFondoBeige,instagram:$colorFondoRosaMedio,facebook: $colorContraste );
+
+            @each $redes, $color in $mapaRedes {
+                .#{$redes} {
+                    background-color: $color;
+                }                
+            }
+
+
+            button {
+                border:0;
+                border-radius: 50%;
+
+                a svg{
+                    padding: 4px;
+                    display: inline-block;
+                }
+            } 
+        } 
+    }
+}
+
+#footerContactos{
+    background-image: linear-gradient(to right, $colorFondoRosa, rgb(255, 160, 122, 100%));
+}
+
+@media (max-width: 1024px){
+    .mainContacto{
+
+        section form .cuadroMensaje{
+            height: 90px;
+        }
+    }     
+}
+
+@media (max-width:768px){
+    .mainContacto{
+        margin-top: 0%;
+
+        section {
+            .tituloContactos{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+
+                h1{
+                    display: inline-block;
+                }
+                .iconosRS{
+                    display: inline-block;
+                }
+            }    
+        
+            form {
+
+                div div .cuadroMensaje{
+                    height: 80px;
+                }
+
+                .areaAConsultar{
+                    font-size: 13px;
+
+                    .areas{
+                        font-size: 12px;
+                        margin-top: 4px;
+                    }
+                }
+            
+                .horario{
+                    font-size: 13px;
+
+                    .horarioOpcion{
+                        font-size: 12px;
+                        margin-top: 4px;
+                    }
+                }
+            
+                .queresInfo{
+                    font-size: 13px;
+                    margin-top: 4px;
+                }
+            }
+
+            div li a svg{
+                display: none!important;
+            }
+        } 
+    }       
+}
+
+@media (max-width: 600px){
+    .mainContacto{
+
+        section {
+            
+            form{
+
+                div div .cuadroMensaje{
+                    height: 70px; 
+                } 
+
+                .areaAConsultar{
+                    font-size: 13px;
+
+                    .areas{
+                        font-size: 12px;
+                        margin-top: 4px;
+                    }
+                }
+        
+                .horario{
+                    font-size: 13px;
+
+                    .horarioOpcion{
+                        font-size: 12px;
+                        margin-top: 4px;
+                    }
+                }
+            
+                .queresInfo{
+                    font-size: 13px;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 420px){
+    .mainContacto{
+
+        section {
+
+            .tituloContactos{
+                justify-content: space-around;
+
+                h1{
+                    font-size: 24px;
+                }
+            }
+            
+            form{
+
+                div{
+                    .cuadroNombreMail{
+                        .cuadroNombre{
+                            height: 110%;
+                        }
+                    
+                        .cuadroMail{
+                            height: 110%;
+                        }
+                    }
+
+                    div .cuadroMensaje{
+                        height: 50px;
+                    }
+                } 
+                
+                #Enviar{
+                    font-size: 12px;
+                }
+                
+                #Reset{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+

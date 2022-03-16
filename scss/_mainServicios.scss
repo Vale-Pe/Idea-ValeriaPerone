@@ -1,0 +1,155 @@
+.mainServicios{
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+
+    div section .divServicio{ 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 30%;
+        background-color: bisque;
+        justify-content: start;
+        align-items: center;
+        height: 60vh;
+
+        img{
+            display: inline-block;
+            border: 0;
+            border-radius: 15px;
+            box-shadow: 0 0 15px 5px grey;
+            margin-top: 12px;
+            object-fit: cover;
+        }
+
+        h4{
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 24px;
+            font-weight: bolder;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        p {
+            display: block;
+            @extend .pBase;
+            font-size: 16px;
+            padding: 4px;
+            margin-bottom: 0%;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        div button{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1024px){
+    .mainServicios{
+        
+        div section .divServicio{
+            img{
+                margin-top: 8px;
+                width: 120px;
+                height: 120px;
+            }
+            h4{
+                font-size: 20px;
+            }
+            p{
+                font-size: 14px;
+                padding:0%;
+            }
+        } 
+    }    
+}
+
+@media (max-width:768px){
+
+    .mainServicios{
+        
+        div section .divServicio{
+            img{
+                margin-top: 4px;
+            }
+            h4{
+                font-size: 130%;
+            }
+            p{
+                font-size: 70%;
+                height: 50%;
+            }
+        }  
+    }    
+}
+
+@media (max-width: 600px){
+   .mainServicios{
+       
+        div section .divServicio{
+            justify-content: center;
+
+            img{
+                width: 100px;
+                height: 100px;
+            }
+
+            h4{
+                font-size: 120%;
+            }
+        
+            p{
+                display: none;
+            }
+        
+            div button{
+                display: inline-block;
+                margin: 20px 0%;
+                border: 3px solid #f9ebcc;
+                border-radius: 50%;
+                background-color: #d3764c;
+                box-shadow: 5px 5px 5px white;
+                width: 60px;
+                height: 60px;
+                font-family:'Montserrat', sans-serif;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    } 
+}
+
+@media (max-width: 420px){
+    .mainServicios{
+
+        div section .divServicio{
+            flex-direction: row;
+            width: 100vw;
+            height: auto;
+            margin: 5px;
+            padding: 5px;
+            justify-content: space-evenly;
+    
+            img{
+                margin: 10px 0%;
+            }
+            h4{
+                margin: 0%;
+                font-size: 90%;
+            }
+        
+            div button{
+                margin: 0%;
+            }
+        }
+    }
+}
+
+
+
+
+

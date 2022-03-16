@@ -1,0 +1,52 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container-area{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+    grid-auto-columns: 1fr;
+    grid-template-rows: 0.9fr 7fr 0.5fr
+    ;
+}
+
+h1{
+    display: block;
+    margin: 10px 0%;
+    color: gray;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight:bold;
+    text-align: center;
+    background-color: transparent;
+}
+
+.pBase{
+    font-family: 'Montserrat', sans-serif;
+    color:rgba(0, 0, 0, 0.7)
+}
+
+@mixin pBaseConParametros ($size) {
+    @extend .pBase;
+    font-size: $size;
+}
+
+@media (max-width: 1024px){
+
+    h1{
+        font-size: 180%;
+    }
+}
+
+@media (max-width:768px){
+
+    h1{
+        font-size: 160%;
+    }
+}
