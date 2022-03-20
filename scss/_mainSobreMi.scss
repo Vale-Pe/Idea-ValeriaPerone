@@ -1,69 +1,111 @@
 .sectionSobreMi{
     grid-area: main;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
 
     .imgSobreMi{
         display: flex;
         border: 1vw solid white;
         background-color: $colorFondoRosa;
-        width: 40vw;
-        height: 80vh;
-        justify-items: center;
+        width: 500px;
+        height: 500px;
+        justify-content: center;
         align-items: center;
+        animation: movimientoImgSM 2s ease;
 
         img{
             display: inline-block;
-            height: 36vw;
-            width: 85vh ;
+            height: 90%;
+            width: 90%;
+            padding: 20px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
-        .sectionTextoSobreMi{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 58vw;
-            overflow: hidden;
+        @keyframes movimientoImgSM {
+            0% {margin-left: -1000px;}
+            100% {margin-left: 0%;}
+        }
+    }
 
-            h1{
-                display: inline-block;
-                margin-bottom: 10px;
-            }
+    .sectionTextoSobreMi{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+        overflow: hidden;
+        animation: movimientoSM 2s ease;
 
-            p{
-                display: block;
-                @extend .pBase;
-                font-size: 16px;
-                margin-top: 8px;
-                margin-bottom: 0%;
-                width: 40vw;
-            }
+        h1{
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        p{
+            display: block;
+            @extend .pBase;
+            font-size: 16px;
+            margin-top: 8px;
+            margin-bottom: 0%;
+            width: 40vw;
+        }
+
+        @keyframes movimientoSM {
+            0% {margin-bottom: -1000px;}
+            100% {margin-bottom: 0;}
         }
     }
 }
 
 @media (max-width: 1024px){
 
-    h1{
-        font-size: 180%;
-    }
-    .pSobreMi{
-        font-size: 14px;
-        width: 45vw;
+    .sectionSobreMi{
+        .imgSobreMi{
+            width: 400px;
+            height: 400px;
+        }
+
+        .sectionTextoSobreMi{
+            h1{
+                font-size: 180%;
+            }
+
+            p{
+                font-size: 14px;
+                width: 45vw;
+            }
+        }
     }
 }
 
+    
+
 @media (max-width:768px){
-    .pSobreMi{
-        font-size: 13px;
-        width: 50vw;
+
+    .sectionSobreMi{
+        
+        .imgSobreMi{
+            width: 380px;
+            height: 380px;
+
+            img{
+                padding: 0;
+            }
+        }
+
+        .sectionTextoSobreMi{
+            P{
+                font-size: 13px;
+                width: 50vw;
+            }
+        }
     }
 }
 
 @media (max-width: 600px){
     .sectionSobreMi{
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
 
@@ -78,14 +120,19 @@
                 height: 150px;
                 width: 150px;
             }
+
+            @keyframes movimientoImgSM {
+                0% {margin-bottom: -1000px;}
+                100% {margin-bottom: 0;}
+            }
         }
 
         .sectionTextoSobreMi{
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             justify-content: center;
             align-content: center;
-            width: 100%;
+            width: 90vw;
             height: 50vh;
 
             h1{
@@ -96,6 +143,12 @@
             p{
                 margin: 0px 12px 8px 12px;
                 font-size: 12px;
+                width: 100%;
+            }
+
+            @keyframes movimientoSM {
+                0% {margin-left: -1000px;}
+                100% {margin-left: 0;}
             }
         }
     }
@@ -119,7 +172,7 @@
         
             p{
                 margin: 0px 4px 4px 4px;
-                font-size: 11px;
+                font-size: 10px;
             }
         }
     }       

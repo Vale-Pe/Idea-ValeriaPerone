@@ -4,6 +4,15 @@
     flex-direction: column;
     justify-content: space-evenly; 
 
+    #tituloLecturas{
+        animation: movimientoTL 2s ease;
+    }
+
+    @keyframes movimientoTL {
+        0% {margin-right: -2000PX;}
+        100% {margin-right: 0;}        
+    }
+
     ul{
         display: grid;
         grid-template-columns: repeat(4, 1fr);

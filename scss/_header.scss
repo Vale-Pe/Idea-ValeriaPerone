@@ -24,7 +24,7 @@ header {
                 animation-name: RotacionLogo;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
-                animation-duration: 10s;
+                animation-duration: 30s;
             }
 
             @keyframes RotacionLogo {
@@ -51,7 +51,7 @@ header {
                     li{
                         list-style-type: none;
                         display: inline-block;
-                        margin: 0 5px;
+                        margin: 0 4px;
 
                         a{
                             text-decoration: none;
@@ -75,24 +75,34 @@ header {
     }
 }
 
-@media (max-width:768px){
+@media (max-width:1024px){
 
     header nav div{
         img{
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
         }
+    }
+}
 
-        div ul li a{
-            font-size: 14px;
-        }
+@media (max-width:768px){
 
+    header nav div div ul li a{
+        font-size: 14px;
     } 
-    
-    
 
     .nav-link{
         padding: 0%;
         margin: 2px 0px;
+    }
+}
+
+@media (max-width:420px){
+
+    header nav div{
+        img{
+            width: 32px;
+            height: 32px;
+        }
     }
 }

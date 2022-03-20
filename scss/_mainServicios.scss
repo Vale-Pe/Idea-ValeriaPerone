@@ -3,48 +3,61 @@
     display: flex;
     justify-content: center;
 
-    div section .divServicio{ 
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        width: 30%;
-        background-color: bisque;
-        justify-content: start;
-        align-items: center;
-        height: 60vh;
+    div section{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 12px;
 
-        img{
-            display: inline-block;
-            border: 0;
-            border-radius: 15px;
-            box-shadow: 0 0 15px 5px grey;
-            margin-top: 12px;
-            object-fit: cover;
-        }
-
-        h4{
-            display: block;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 24px;
-            font-weight: bolder;
-            margin-top: 10px;
-            margin-bottom: 4px;
-            text-align: center;
-        }
-
-        p {
-            display: block;
-            @extend .pBase;
-            font-size: 16px;
-            padding: 4px;
-            margin-bottom: 0%;
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        div button{
-            display: none;
-        }
+        .divServicio{ 
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            background-color: bisque;
+            justify-content: start;
+            align-items: center;
+            height: 60vh;
+            transition: all 0.25s;
+    
+            &:hover{
+                transform: translate(-5px,-5px);
+                border: 2px solid $colorContraste;
+                box-shadow: 5px 5px 5px $colorFondoBeige;
+            }
+    
+            img{
+                display: inline-block;
+                border: 0;
+                border-radius: 15px;
+                box-shadow: 0 0 15px 5px grey;
+                margin-top: 12px;
+                object-fit: cover;
+            }
+    
+            h4{
+                display: block;
+                font-family: 'Barlow Condensed', sans-serif;
+                font-size: 24px;
+                font-weight: bolder;
+                margin-top: 10px;
+                margin-bottom: 4px;
+                text-align: center;
+            }
+    
+            p {
+                display: block;
+                @extend .pBase;
+                font-size: 16px;
+                padding: 4px;
+                margin-bottom: 0%;
+                text-align: center;
+                overflow: hidden;
+            }
+            
+            div button{
+                display: none;
+            }
+        } 
     }
 }
 
@@ -89,13 +102,15 @@
 
 @media (max-width: 600px){
    .mainServicios{
+       flex-direction: column;
        
         div section .divServicio{
-            justify-content: center;
+            justify-content: space-evenly;
 
             img{
                 width: 100px;
                 height: 100px;
+                box-shadow: 2px 2px 10px grey;
             }
 
             h4{
@@ -110,14 +125,20 @@
                 display: inline-block;
                 margin: 20px 0%;
                 border: 3px solid #f9ebcc;
-                border-radius: 50%;
-                background-color: #d3764c;
+                border-radius: 30px;
+                background-color: $colorFondoRosaMedio;
                 box-shadow: 5px 5px 5px white;
-                width: 60px;
-                height: 60px;
+                width: auto;
+                height: auto;
+                padding: 8px;
                 font-family:'Montserrat', sans-serif;
+                font-size: 11px;
                 color: white;
                 cursor: pointer;
+
+                &:active{
+                    border: 1px inset;
+                }
             }
         }
     } 
@@ -125,31 +146,62 @@
 
 @media (max-width: 420px){
     .mainServicios{
+        display: flex;
+        justify-content: space-evenly;
 
-        div section .divServicio{
-            flex-direction: row;
-            width: 100vw;
-            height: auto;
-            margin: 5px;
-            padding: 5px;
-            justify-content: space-evenly;
+        div section{
+            display: flex;
+            flex-direction: column;
+            grid-gap:0;
+            justify-content: center;
+
+            .divServicio{
+                flex-direction: row;
+                width: 90vw;
+                height: auto;
+                margin: 5px;
+                padding: 5px;
+                justify-content: space-evenly;
     
-            img{
-                margin: 10px 0%;
-            }
-            h4{
-                margin: 0%;
-                font-size: 90%;
-            }
+                &:hover{
+                    transform: translate(0,-5px);
+                    // border: 2px solid $colorContraste;
+                    box-shadow: 2px 2px 10px $colorFondoBeige;
+                }
         
-            div button{
-                margin: 0%;
-            }
+        
+                img{
+                    margin: 5px 0%;
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                }
+                h4{
+                    margin: 0%;
+                    font-size: 90%;
+                }
+            
+                div button{
+                    margin: 0%;
+                }
+            } 
         }
     }
 }
 
+@media (max-width: 320px){
+    .mainServicios{
+        display: flex;
 
+        div section{
+            align-items: center;
+
+            .divServicio{
+                margin: 5px 0;
+            } 
+        }
+    }
+}
 
 
 

@@ -25,10 +25,16 @@ h1{
     font-weight:bold;
     text-align: center;
     background-color: transparent;
+    animation: movimientoT 0.5s ease;
+}
+
+@keyframes movimientoT {
+    0% {margin-top: -1500px;}     
+        
 }
 
 .pBase{
-    font-family: 'Montserrat', sans-serif;
+    font-family:'Montserrat', sans-serif;
     color:rgba(0, 0, 0, 0.7)
 }
 
