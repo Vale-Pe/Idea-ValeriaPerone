@@ -1,10 +1,10 @@
-.sectionSobreMi{
+.sectionSobreMi {
     grid-area: main;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    .imgSobreMi{
+    .imgSobreMi {
         display: flex;
         border: 1vw solid white;
         background-color: $colorFondoRosa;
@@ -14,7 +14,7 @@
         align-items: center;
         animation: movimientoImgSM 2s ease;
 
-        img{
+        img {
             display: inline-block;
             height: 90%;
             width: 90%;
@@ -24,12 +24,17 @@
         }
 
         @keyframes movimientoImgSM {
-            0% {margin-left: -1000px;}
-            100% {margin-left: 0%;}
+            0% {
+                margin-left: -1000px;
+            }
+
+            100% {
+                margin-left: 0%;
+            }
         }
     }
 
-    .sectionTextoSobreMi{
+    .sectionTextoSobreMi {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -38,11 +43,12 @@
         overflow: hidden;
         animation: movimientoSM 2s ease;
 
-        h1{
+        h1 {
             display: inline-block;
             margin-bottom: 10px;
         }
-        p{
+
+        p {
             display: block;
             @extend .pBase;
             font-size: 16px;
@@ -52,26 +58,31 @@
         }
 
         @keyframes movimientoSM {
-            0% {margin-bottom: -1000px;}
-            100% {margin-bottom: 0;}
+            0% {
+                margin-bottom: -1000px;
+            }
+
+            100% {
+                margin-bottom: 0;
+            }
         }
     }
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
 
-    .sectionSobreMi{
-        .imgSobreMi{
+    .sectionSobreMi {
+        .imgSobreMi {
             width: 400px;
             height: 400px;
         }
 
-        .sectionTextoSobreMi{
-            h1{
+        .sectionTextoSobreMi {
+            h1 {
                 font-size: 180%;
             }
 
-            p{
+            p {
                 font-size: 14px;
                 width: 45vw;
             }
@@ -79,23 +90,23 @@
     }
 }
 
-    
 
-@media (max-width:768px){
 
-    .sectionSobreMi{
-        
-        .imgSobreMi{
+@media (max-width:768px) {
+
+    .sectionSobreMi {
+
+        .imgSobreMi {
             width: 380px;
             height: 380px;
 
-            img{
+            img {
                 padding: 0;
             }
         }
 
-        .sectionTextoSobreMi{
-            P{
+        .sectionTextoSobreMi {
+            P {
                 font-size: 13px;
                 width: 50vw;
             }
@@ -103,31 +114,36 @@
     }
 }
 
-@media (max-width: 600px){
-    .sectionSobreMi{
+@media (max-width: 600px) {
+    .sectionSobreMi {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
 
-        .imgSobreMi{
+        .imgSobreMi {
             background-color: transparent;
             border: none;
             height: 30vh;
             width: 100%;
             justify-content: center;
-    
-            img{
+
+            img {
                 height: 150px;
                 width: 150px;
             }
 
             @keyframes movimientoImgSM {
-                0% {margin-bottom: -1000px;}
-                100% {margin-bottom: 0;}
+                0% {
+                    margin-bottom: -1000px;
+                }
+
+                100% {
+                    margin-bottom: 0;
+                }
             }
         }
 
-        .sectionTextoSobreMi{
+        .sectionTextoSobreMi {
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
@@ -135,54 +151,50 @@
             width: 90vw;
             height: 50vh;
 
-            h1{
+            h1 {
                 font-size: 140%;
                 margin-top: 10px;
             }
-            
-            p{
+
+            p {
                 margin: 0px 12px 8px 12px;
                 font-size: 12px;
                 width: 100%;
             }
 
             @keyframes movimientoSM {
-                0% {margin-left: -1000px;}
-                100% {margin-left: 0;}
+                0% {
+                    margin-left: -1000px;
+                }
+
+                100% {
+                    margin-left: 0;
+                }
             }
         }
     }
 }
 
-@media (max-width: 420px){
-    .sectionSobreMi{
-       
-        .imgSobreMi{
+@media (max-width: 420px) {
+    .sectionSobreMi {
+
+        .imgSobreMi {
             height: 30vh;
         }
-    
-        .sectionTextoSobreMi{
+
+        .sectionTextoSobreMi {
             align-content: space-between;
             height: 50vh;
-    
-            h1{
+
+            h1 {
                 font-size: 125%;
                 margin: 0px 0px 4px 0px
             }
-        
-            p{
+
+            p {
                 margin: 0px 4px 4px 4px;
                 font-size: 10px;
             }
         }
-    }       
+    }
 }
-
-
-
-
-
-
-
-
-

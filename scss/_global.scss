@@ -1,41 +1,41 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
 }
 
-.container-area{
+.container-area {
     display: grid;
     width: 100vw;
     height: 100vh;
     grid-template-areas:
-    'header'
-    'main'
-    'footer';
+        'header'
+        'main'
+        'footer';
     grid-auto-columns: 1fr;
-    grid-template-rows: 0.9fr 7fr 0.5fr
-    ;
+    grid-template-rows: 0.9fr 7fr 0.5fr;
 }
 
-h1{
+h1 {
     display: block;
     margin: 10px 0%;
     color: gray;
     font-family: 'Montserrat', sans-serif;
     font-size: 28px;
-    font-weight:bold;
+    font-weight: bold;
     text-align: center;
     background-color: transparent;
     animation: movimientoT 0.5s ease;
 }
 
 @keyframes movimientoT {
-    0% {margin-top: -1500px;}     
-        
+    0% {
+        margin-top: -1500px;
+    }
 }
 
-.pBase{
-    font-family:'Montserrat', sans-serif;
-    color:rgba(0, 0, 0, 0.7)
+.pBase {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(0, 0, 0, 0.7)
 }
 
 @mixin pBaseConParametros ($size) {
@@ -43,16 +43,16 @@ h1{
     font-size: $size;
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
 
-    h1{
+    h1 {
         font-size: 180%;
     }
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    h1{
+    h1 {
         font-size: 160%;
     }
 }

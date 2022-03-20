@@ -1,10 +1,10 @@
-.mainContacto{
+.mainContacto {
     grid-area: main;
     background-color: $colorFondoRosa;
-    display:flex;
+    display: flex;
     flex-direction: column;
 
-    section{
+    section {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -12,47 +12,57 @@
         height: 100%;
         margin: 12px 0px;
 
-        .iconosRS{
+        .iconosRS {
             display: none;
 
-            a{
+            a {
                 text-decoration: none;
-            }   
+            }
         }
 
-        form{
+        form {
             display: flex;
             flex-direction: column;
             @extend .pBase;
 
-            div{
-                .cuadroNombreMail{
+            div {
+                .cuadroNombreMail {
                     display: flex;
-    
-                    .cuadroNombre{
+
+                    .cuadroNombre {
                         display: inline-block;
                         @include pBaseConParametros (14px);
-                    
                         width: 100%;
                         height: 120%;
                         border: 0;
                         background-color: white;
                         box-shadow: 5px 5px 10px $colorContraste;
+
+                        &:focus, input:focus, input[type]:focus {
+                            border: 2px solid $colorContraste;
+                            box-shadow: 0 1px 1px $colorFondoBeige  inset, 0 0 8px $colorContraste;
+                            outline: 0 none;
+                        }
                     }
-        
-                    .cuadroMail{
+
+                    .cuadroMail {
                         display: inline-block;
                         @include pBaseConParametros (14px);
-                    
                         width: 100%;
                         height: 120%;
                         border: 0;
                         background-color: white;
                         box-shadow: 5px 5px 10px $colorContraste;
+
+                        &:focus, input:focus, input[type]:focus {
+                            border: 2px solid $colorContraste;
+                            box-shadow: 0 1px 1px $colorFondoBeige  inset, 0 0 8px $colorContraste;
+                            outline: 0 none;
+                        }
                     }
                 }
-            
-                div .cuadroMensaje{
+
+                div .cuadroMensaje {
                     display: inline-block;
                     @include pBaseConParametros (14px);
                     padding-top: 5px;
@@ -61,10 +71,16 @@
                     width: 100%;
                     height: 100px;
                     box-shadow: 5px 5px 10px $colorContraste;
+
+                    &:focus, input:focus, input[type]:focus {
+                        border: 2px solid $colorContraste;
+                        box-shadow: 0 1px 1px $colorFondoBeige  inset, 0 0 8px $colorContraste;
+                        outline: 0 none;
+                    }
                 }
-            }   
-            
-            .areaAConsultar{
+            }
+
+            .areaAConsultar {
                 display: flex;
                 flex-direction: column;
                 margin-top: 8px;
@@ -72,16 +88,16 @@
                 font-weight: bolder;
                 @include pBaseConParametros (14px);
 
-                .areas{
+                .areas {
                     display: inline-block;
                     @include pBaseConParametros (13px);
                     margin-top: 8px;
                     font-weight: lighter;
                 }
             }
-            
-                      
-            .horario{
+
+
+            .horario {
                 display: inline-block;
                 font-weight: bolder;
                 @include pBaseConParametros (14px);
@@ -99,18 +115,18 @@
                     background-color: white;
                 }
             }
-                       
-            .queresInfo{
+
+            .queresInfo {
                 display: flex;
                 font-weight: bolder;
                 margin-top: 8px;
                 @include pBaseConParametros (14px);
             }
-            
-            .botonesContacto{
+
+            .botonesContacto {
                 margin-top: 12px;
 
-                #Enviar{
+                #Enviar {
                     display: inline-block;
                     width: auto;
                     font-size: 14px;
@@ -118,9 +134,20 @@
                     background-color: white;
                     font-weight: bolder;
                     box-shadow: 0 0 15px 5px $colorContraste;
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        color: white;
+                        background-color: $colorContraste;
+                    }
+
+                    &:active {
+                        border: 1px inset;
+                    }
                 }
-                
-                #Reset{
+
+                #Reset {
                     display: inline-block;
                     width: auto;
                     font-size: 14px;
@@ -128,170 +155,186 @@
                     background-color: white;
                     font-weight: bolder;
                     box-shadow: 0 0 15px 5px $colorContraste;
-    
+                    cursor: pointer;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        color: white;
+                        background-color: $colorContraste;
+                    }
+
+                    &:active {
+                        border: 1px inset;
+                    }
                 }
             }
         }
-            
+
         div li {
             margin: 0px 5px;
 
-            $mapaRedes: (google: $colorFondoBeige,instagram:$colorFondoRosaMedio,facebook: $colorContraste );
+            $mapaRedes: (google: $colorFondoBeige, instagram:$colorFondoRosaMedio, facebook: $colorContraste);
 
-            @each $redes, $color in $mapaRedes {
+            @each $redes,
+            $color in $mapaRedes {
                 .#{$redes} {
                     background-color: $color;
-                }                
+                }
             }
 
 
             button {
-                border:0;
+                border: 0;
                 border-radius: 50%;
 
-                a svg{
+                &:active {
+                    border: 1px inset;
+                }
+
+                a svg {
                     padding: 4px;
                     display: inline-block;
                 }
-            } 
-        } 
+            }
+        }
     }
 }
 
-#footerContactos{
+#footerContactos {
     background-image: linear-gradient(to right, $colorFondoRosa, rgb(255, 160, 122, 100%));
 }
 
-@media (max-width: 1024px){
-    .mainContacto{
+@media (max-width: 1024px) {
+    .mainContacto {
 
-        section form{
-            div div .cuadroMensaje{
+        section form {
+            div div .cuadroMensaje {
                 height: 90px;
             }
 
-            .areaAConsultar{
+            .areaAConsultar {
                 margin-top: 4px;
 
-                .areas{
+                .areas {
                     margin-top: 4px;
                 }
             }
 
-            .horario div p{
+            .horario div p {
                 margin-top: 4px;
             }
 
-            .queresInfo{
+            .queresInfo {
                 margin-top: 4px;
             }
 
-            .botonesContacto{
+            .botonesContacto {
                 margin-top: 8px;
 
-                #Enviar{
+                #Enviar {
                     font-size: 12px;
                 }
 
-                #Reset{
+                #Reset {
                     font-size: 12px;
                 }
             }
         }
-        
-        div li button a svg{
+
+        div li button a svg {
             width: 32px;
             height: 32px;
         }
-    }     
+    }
 }
 
-@media (max-width:768px){
-    .mainContacto{
+@media (max-width:768px) {
+    .mainContacto {
         margin-top: 0%;
 
         section {
-            .tituloContactos{
+            .tituloContactos {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
                 justify-content: center;
 
-                h1{
+                h1 {
                     display: inline-block;
                 }
-                .iconosRS{
+
+                .iconosRS {
                     display: inline-block;
                 }
-            }    
-        
+            }
+
             form {
 
-                div div .cuadroMensaje{
+                div div .cuadroMensaje {
                     height: 80px;
                 }
 
-                .areaAConsultar{
+                .areaAConsultar {
                     font-size: 13px;
 
-                    .areas{
+                    .areas {
                         font-size: 12px;
                         margin-top: 4px;
                     }
                 }
-            
-                .horario{
+
+                .horario {
                     font-size: 13px;
 
-                    .horarioOpcion{
+                    .horarioOpcion {
                         font-size: 12px;
                         margin-top: 4px;
                     }
                 }
-            
-                .queresInfo{
+
+                .queresInfo {
                     font-size: 13px;
                     margin-top: 4px;
                 }
             }
 
-            div li a svg{
-                display: none!important;
+            div li a svg {
+                display: none !important;
             }
-        } 
-    }       
+        }
+    }
 }
 
-@media (max-width: 600px){
-    .mainContacto{
+@media (max-width: 600px) {
+    .mainContacto {
 
         section {
-            
-            form{
 
-                div div .cuadroMensaje{
-                    height: 70px; 
-                } 
+            form {
 
-                .areaAConsultar{
+                div div .cuadroMensaje {
+                    height: 70px;
+                }
+
+                .areaAConsultar {
                     font-size: 13px;
 
-                    .areas{
+                    .areas {
                         font-size: 12px;
                         margin-top: 4px;
                     }
                 }
-        
-                .horario{
+
+                .horario {
                     font-size: 13px;
 
-                    .horarioOpcion{
+                    .horarioOpcion {
                         font-size: 12px;
                         margin-top: 4px;
                     }
                 }
-            
-                .queresInfo{
+
+                .queresInfo {
                     font-size: 13px;
                     margin-top: 4px;
                 }
@@ -301,46 +344,45 @@
 }
 
 
-@media (max-width: 420px){
-    .mainContacto{
+@media (max-width: 420px) {
+    .mainContacto {
 
         section {
 
-            .tituloContactos{
+            .tituloContactos {
                 justify-content: space-around;
 
-                h1{
+                h1 {
                     font-size: 24px;
                 }
             }
-            
-            form{
 
-                div{
-                    .cuadroNombreMail{
-                        .cuadroNombre{
+            form {
+
+                div {
+                    .cuadroNombreMail {
+                        .cuadroNombre {
                             height: 110%;
                         }
-                    
-                        .cuadroMail{
+
+                        .cuadroMail {
                             height: 110%;
                         }
                     }
 
-                    div .cuadroMensaje{
+                    div .cuadroMensaje {
                         height: 50px;
                     }
-                } 
-                
-                #Enviar{
+                }
+
+                #Enviar {
                     font-size: 12px;
                 }
-                
-                #Reset{
+
+                #Reset {
                     font-size: 12px;
                 }
             }
         }
     }
 }
-
