@@ -131,6 +131,10 @@
                     transition: none;
                     justify-content: flex-start;
 
+                    &:hover {
+                        margin-top: 0;
+                    }
+
                     &::before {
                         content: '\26AC';
                         color: #d3764c;
