@@ -1,23 +1,25 @@
-.sectionSobreMi {
-    grid-area: main;
+.mainSobreMi {
+    // grid-area: main;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 100vw;
+    height: auto;
 
     .imgSobreMi {
         display: flex;
         border: 1vw solid white;
         background-color: $colorFondoRosa;
-        width: 500px;
-        height: 500px;
+        width: 40vw;
+        height: 100%;
         justify-content: center;
         align-items: center;
         animation: movimientoImgSM 2s ease;
 
         img {
             display: inline-block;
-            height: 90%;
-            width: 90%;
+            height: 35vw;
+            width: 35vw;
             padding: 20px;
             border-radius: 50%;
             object-fit: cover;
@@ -38,28 +40,56 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        width: 50vw;
+        height: 100%;
+        width: 60vw;
         overflow: hidden;
         animation: movimientoSM 2s ease;
+        border: 1vw solid white;
 
         h1 {
             display: inline-block;
             margin-bottom: 10px;
         }
 
-        p {
-            display: block;
+        h2 {
+            img{
+                display: none;
+            }
+
+            strong{
+                display:inline-block;
+                @extend .pBase;
+                font-size: 24px;
+                text-align: center;
+                margin: 8px 0 15px 0;
+                color: $colorContraste;
+            }
+        }
+
+        h4 {
+            display: inline-block;
             @extend .pBase;
-            font-size: 16px;
+            font-size: 14px;
+            text-align: start ;
+            text-decoration: underline;
+            width: 80%;
+        }
+
+        span{
             margin-top: 8px;
-            margin-bottom: 0%;
-            width: 40vw;
+            text-align: justify;
+
+            p {
+                display: block;
+                @extend .pBase;
+                font-size: 12px;
+                margin-bottom: 4px;
+            } 
         }
 
         @keyframes movimientoSM {
             0% {
-                margin-bottom: -1000px;
+                margin-bottom: -2000px;
             }
 
             100% {
@@ -71,20 +101,23 @@
 
 @media (max-width: 1024px) {
 
-    .sectionSobreMi {
-        .imgSobreMi {
-            width: 400px;
-            height: 400px;
-        }
+    .mainSobreMi {
 
         .sectionTextoSobreMi {
             h1 {
-                font-size: 180%;
+                font-size: 170%;
             }
 
-            p {
-                font-size: 14px;
-                width: 45vw;
+            h2 strong{
+                font-size: 16px;
+            }
+
+            h4 {
+                font-size: 12px;
+            }
+
+            span p {
+                font-size: 10px;
             }
         }
     }
@@ -94,28 +127,51 @@
 
 @media (max-width:768px) {
 
-    .sectionSobreMi {
+    .mainSobreMi {
 
         .imgSobreMi {
-            width: 380px;
-            height: 380px;
+            width: 30vw;
+            border: 0.5vw solid white;
 
             img {
-                padding: 0;
+                padding: 10px;
+                width: 30vw;
+                height: 30vw;
             }
         }
 
         .sectionTextoSobreMi {
-            P {
-                font-size: 13px;
-                width: 50vw;
+
+            width: 70vw;
+            border: none;
+            margin: 0 4px;
+
+            h1 {
+                font-size: 150%;
+                margin: 4px 0;
+            }
+
+            h2 strong{
+                margin-top: 0;
+            }
+
+            h4 {
+                margin-bottom: 4px;
+            }
+
+            span {
+                margin-top: 6px;
+
+                p{
+                    margin-bottom: 0;
+                }
             }
         }
     }
 }
 
 @media (max-width: 600px) {
-    .sectionSobreMi {
+    .mainSobreMi {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
@@ -128,8 +184,9 @@
             justify-content: center;
 
             img {
-                height: 150px;
-                width: 150px;
+                height: 25vh;
+                width: 25vh;
+                padding: 4px;
             }
 
             @keyframes movimientoImgSM {
@@ -146,20 +203,33 @@
         .sectionTextoSobreMi {
             display: flex;
             flex-wrap: nowrap;
-            justify-content: center;
+            justify-content: flex-start;
             align-content: center;
-            width: 90vw;
-            height: 50vh;
+            width: 100vw;
 
             h1 {
                 font-size: 140%;
                 margin-top: 10px;
             }
 
-            p {
-                margin: 0px 12px 8px 12px;
-                font-size: 12px;
-                width: 100%;
+            h2 strong{
+                display: flex;
+                justify-content: center;
+                margin: 4px 0;
+                font-size: 14px;
+            }
+
+            h4{
+                margin: 0 5px 4px 5px;
+                font-size: 11px;
+            }
+            span{
+                margin-top: 2px;
+
+                p {
+                    margin: 0 5px;
+                    font-size: 9px;
+                }
             }
 
             @keyframes movimientoSM {
@@ -176,24 +246,41 @@
 }
 
 @media (max-width: 420px) {
-    .sectionSobreMi {
+    .mainSobreMi {
 
         .imgSobreMi {
-            height: 30vh;
+            display: none;
         }
 
         .sectionTextoSobreMi {
-            align-content: space-between;
-            height: 50vh;
+            justify-content: center;
 
             h1 {
-                font-size: 125%;
-                margin: 0px 0px 4px 0px
+                font-size: 120%;
+                margin: 4px 0px 4px 0px
+            }
+
+            h2{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-top: 4px;
+                margin-bottom: 15px;
+
+                img{
+                    display:inline-block ;
+                    height: 15vh;
+                    width: 15vh;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                strong{
+                    display: inline-block;
+                }
             }
 
             p {
                 margin: 0px 4px 4px 4px;
-                font-size: 10px;
             }
         }
     }

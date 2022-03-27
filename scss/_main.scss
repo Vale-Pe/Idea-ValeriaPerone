@@ -1,11 +1,15 @@
 .mainIndex {
+    grid-area: main;
     display: flex;
     justify-content: center;
+    width: 100vw;
+    height: auto;    
 
     img {
         display: inline-block;
         width: auto;
-        height: 80vh;
+        height: auto;
+        width: 55%;
         align-self: flex-end;
         -webkit-filter: drop-shadow(10px 10px 5px $colorFondoBeige);
         filter: drop-shadow(10px 10px 5px $colorFondoBeige);
@@ -225,19 +229,22 @@
     }
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .mainIndex {
         img {
-            width: 90vw;
+            width: 70%;
             height: auto;
-            align-self: center;
         }
     }
 }
 
-@media (max-width: 420px) {
+
+@media (max-width: 600px) {
     .mainIndex {
-        background-size: 60vh;
+        img {
+            width: 80%;
+            // height: auto;
+            align-self: center;
+        }
     }
 }
