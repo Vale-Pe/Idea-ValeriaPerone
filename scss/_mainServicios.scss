@@ -18,6 +18,7 @@
             justify-content: flex-start;
             align-items: center;
             height: 65vh;
+            padding: 8px;
             transition: all 0.25s;
 
             &:hover {
@@ -45,7 +46,7 @@
                 text-align: center;
             }
 
-            p {
+            .textoServicios {
                 display: block;
                 @extend .pBase;
                 font-size: 14px;
@@ -55,7 +56,10 @@
                 overflow: hidden;
             }
 
-            div button {
+            .botonServicios {
+                display: none;
+            }
+            div .textoCollapse{
                 display: none;
             }
         }
@@ -76,7 +80,7 @@
                 font-size: 20px;
             }
 
-            p {
+            .textoServicios {
                 font-size: 11px;
                 padding: 0%;
             }
@@ -97,7 +101,7 @@
                 font-size: 130%;
             }
 
-            p {
+            .textoServicios {
                 font-size: 10px;
                 height: 50%;
             }
@@ -122,29 +126,47 @@
                 font-size: 120%;
             }
 
-            p {
+            .textoServicios {
                 display: none;
             }
 
-            div button {
-                display: inline-block;
-                margin: 20px 0%;
-                border: 3px solid #f9ebcc;
-                border-radius: 30px;
-                background-color: $colorFondoRosaMedio;
-                box-shadow: 5px 5px 5px white;
-                width: auto;
-                height: auto;
-                padding: 8px;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 11px;
-                color: white;
-                cursor: pointer;
+            .botonServicios{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 0;
 
-                &:active {
-                    border: 1px inset;
+                button {
+                    display: inline-block;
+                    margin: 10px 0%;
+                    border: 3px solid #f9ebcc;
+                    border-radius: 30px;
+                    background-color: $colorFondoRosaMedio;
+                    box-shadow: 1px 1px 15px white;
+                    width: auto;
+                    height: auto;
+                    padding: 8px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 11px;
+                    color: white;
+                    cursor: pointer;
+    
+                    &:active {
+                        border: 1px inset;
+                    }
                 }
             }
+
+            div {
+
+                .textoCollapse{
+                    display: inline-block;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 8px;
+                    background-color: transparent;
+                    border: none;
+                } 
+            } 
         }
     }
 }
@@ -162,33 +184,41 @@
 
             .divServicio {
                 flex-direction: row;
-                width: 90vw;
+                width: 95vw;
                 height: auto;
                 margin: 5px;
-                padding: 5px;
+                padding: 16px 2px;
                 justify-content: space-evenly;
 
                 &:hover {
                     transform: translate(0, -5px);
-                    // border: 2px solid $colorContraste;
                     box-shadow: 2px 2px 10px $colorFondoBeige;
                 }
 
 
                 img {
-                    margin: 5px 0%;
-                    width: 90px;
-                    height: 90px;
+                    margin: 4px;
+                    width: 60px;
+                    height: 60px;
                     border-radius: 50%;
                 }
 
                 h4 {
-                    margin: 0%;
+                    margin: 0 4px;
                     font-size: 90%;
+
                 }
 
-                div button {
-                    margin: 0%;
+                .botonServicios {
+                    button {
+                        font-size: 8px;
+                        padding: 4px;
+                        margin: 2px;
+                    }
+                }
+
+                div .textoCollapse{
+                    width: 30vw;
                 }
             }
         }
@@ -201,6 +231,7 @@
 
         div section {
             align-items: center;
+            justify-content: center;
 
             .divServicio {
                 margin: 5px 0;
