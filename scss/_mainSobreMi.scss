@@ -39,7 +39,7 @@
     .sectionTextoSobreMi {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         height: 100%;
         width: 60vw;
         overflow: hidden;
@@ -174,12 +174,12 @@
     .mainSobreMi {
         flex-direction: column-reverse;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
 
         .imgSobreMi {
             background-color: transparent;
             border: none;
-            height: 30vh;
+            height: auto;
             width: 100%;
             justify-content: center;
 
@@ -203,9 +203,9 @@
         .sectionTextoSobreMi {
             display: flex;
             flex-wrap: nowrap;
-            justify-content: flex-start;
-            align-content: center;
             width: 100vw;
+            justify-content: stretch;
+            height: auto;
 
             h1 {
                 font-size: 140%;
@@ -247,13 +247,17 @@
 
 @media (max-width: 420px) {
     .mainSobreMi {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        align-items: stretch;
 
         .imgSobreMi {
             display: none;
         }
 
         .sectionTextoSobreMi {
-            justify-content: center;
+            justify-content: space-evenly;
 
             h1 {
                 font-size: 120%;
@@ -277,10 +281,6 @@
                 strong{
                     display: inline-block;
                 }
-            }
-
-            p {
-                margin: 0px 4px 4px 4px;
             }
         }
     }

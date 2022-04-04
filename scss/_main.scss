@@ -10,7 +10,7 @@
         width: auto;
         height: auto;
         width: 55%;
-        align-self: flex-end;
+        align-self: center;
         -webkit-filter: drop-shadow(10px 10px 5px $colorFondoBeige);
         filter: drop-shadow(10px 10px 5px $colorFondoBeige);
     }
@@ -243,8 +243,6 @@
     .mainIndex {
         img {
             width: 80%;
-            // height: auto;
-            align-self: center;
         }
     }
 }
