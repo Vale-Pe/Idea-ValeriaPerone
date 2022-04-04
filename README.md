@@ -1,0 +1,2 @@
+Bienvenidos a mi proyecto de página Web!
+Este es un proyecto acerca de la fonoaudiología y los ámbitos en los cuales, como licenciada fonoaudióloga, desarrollo mi actividad. Incluye una descripción sobre mi formación, los servicios que brindo, lecturas relevantes para informarse sobre las variadas incumbencias de esta profesión y una pagina de contactos que aún se encuentra en desarrollo ya que, por el momento, el proyecto está realizado en HTML y CSS (SCSS).
